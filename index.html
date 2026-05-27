@@ -1,0 +1,230 @@
+<!-- ========================= -->
+<!-- index.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sur-Inclusivo</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container py-4">
+
+    <!-- HERO -->
+    <div class="hero text-center p-4 mb-4">
+      <h1 class="display-5 fw-bold">Sur-Inclusivo</h1>
+
+      <p class="lead mt-3">
+        Plataforma de apoyo estudiantil orientada a inclusión,
+        bienestar y orientación emocional.
+      </p>
+
+      <div class="alert alert-light mt-4 shadow-sm">
+        <strong>Escanea el código QR</strong><br>
+        y accede rápidamente a recursos de apoyo institucional.
+      </div>
+    </div>
+
+    <!-- QR -->
+    <div class="card shadow-lg border-0 rounded-4 text-center mb-4">
+      <div class="card-body">
+
+        <h2 class="mb-3 text-purple">Código QR de Acceso</h2>
+
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.inacap.cl"
+          alt="QR"
+          class="img-fluid qr-img"
+        >
+
+        <p class="mt-3 text-muted">
+          Acceso rápido a orientación estudiantil y apoyo emocional.
+        </p>
+      </div>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="row g-3 mb-4">
+
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <h3>Inclusión</h3>
+          <p>
+            Información sobre convivencia, diversidad y apoyo institucional.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <h3>Salud Mental</h3>
+          <p>
+            Recursos de orientación psicológica y acompañamiento emocional.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <h3>Seguridad</h3>
+          <p>
+            Guía rápida para acceder a apoyo en situaciones de crisis.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAPA -->
+<div class="card shadow border-0 rounded-4 mb-4">
+
+  <div class="card-body">
+
+    <h2 class="text-center text-purple mb-4">
+      <i class="bi bi-geo-alt-fill"></i>
+      Mapa Guía de Apoyo
+    </h2>
+
+    <div class="map-container position-relative">
+
+      <!-- IMAGEN DEL MAPA -->
+      <img
+        src="img/mapa.jpg"
+        alt="Mapa INACAP"
+        class="mapa img-fluid"
+      >
+
+      <!-- DAE -->
+      <button
+        class="map-pin dae"
+        onclick="mostrarInfo('dae')"
+        title="Departamento de Asuntos Estudiantiles"
+      >
+        <i class="bi bi-people-fill"></i>
+      </button>
+
+      <!-- PSICOLOGIA -->
+      <button
+        class="map-pin psicologia"
+        onclick="mostrarInfo('psicologia')"
+        title="Apoyo Psicológico"
+      >
+        <i class="bi bi-heart-pulse-fill"></i>
+      </button>
+
+      <!-- EMERGENCIA -->
+      <button
+        class="map-pin emergencia"
+        onclick="mostrarInfo('emergencia')"
+        title="Emergencia"
+      >
+        <i class="bi bi-exclamation-triangle-fill"></i>
+      </button>
+
+      <!-- PUNTO SEGURO -->
+      <button
+        class="map-pin seguro"
+        onclick="mostrarInfo('seguro')"
+        title="Punto Seguro"
+      >
+        <i class="bi bi-shield-fill-check"></i>
+      </button>
+
+    </div>
+
+    <!-- CAJA DE INFORMACION -->
+    <div id="info-box" class="info-box mt-4">
+
+      <h4 class="text-purple">
+        <i class="bi bi-cursor-fill"></i>
+        Selecciona un punto del mapa
+      </h4>
+
+      <p>
+        Haz clic en los íconos interactivos para visualizar información
+        de apoyo institucional.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+    <!-- CONTACTOS -->
+    <div class="card shadow border-0 rounded-4 mb-4">
+      <div class="card-body">
+
+        <h2 class="text-center text-purple mb-4">
+          Contactos DAE
+        </h2>
+
+        <div class="list-group">
+
+          <div class="list-group-item rounded-3 mb-2">
+            <strong>Departamento de Asuntos Estudiantiles</strong><br>
+            Correo: dae@inacapmail.cl
+          </div>
+
+          <div class="list-group-item rounded-3 mb-2">
+            <strong>Apoyo Psicológico</strong><br>
+            Teléfono: +56 9 1234 5678
+          </div>
+
+          <div class="list-group-item rounded-3">
+            <strong>Emergencia Institucional</strong><br>
+            Anexo: 101
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTON -->
+    <div class="text-center">
+      <button class="btn btn-purple btn-lg px-5" id="btnMensaje">
+        Solicitar Ayuda
+      </button>
+
+      <p id="mensaje" class="mt-3 fw-bold"></p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-5">
+      <p>
+        Proyecto académico de Innovación y Emprendimiento<br>
+        INACAP Santiago Sur
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="js/script.js"></script>
+  <!-- BOTON WHATSAPP -->
+
+  <a
+   href="https://wa.me/56912345678"
+    class="whatsapp-float"
+    target="_blank"
+  >
+
+    <i class="bi bi-whatsapp"></i>
+
+  </a>
+</body>
+</html>
+
+
+
